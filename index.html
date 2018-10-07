@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>OK Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="OK Studio creates distinctive identities and products for small businesses and makers. We are a small but mighty team of graphic and industrial designers located in Portland, Oregon.">
+  <meta property="og:url" content="https://www.hiokstudio.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OK Studio">
+  <!-- <meta property="og:image" content="images/ok-social.png"> -->
+  <meta property="og:description" content="OK Studio creates distinctive identities and products for small businesses and makers.">
+  <meta property="og:site_name" content="OK Studio">
+  <meta property="og:locale" content="en_US">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+  <link rel="preload" as="image" href="images/cursor-goodwell-lo.png">
+  <link rel="preload" as="image" href="images/cursor-west-lo.png">
+  <link rel="preload" as="image" href="images/cursor-pretend-lo.png">
+  <link rel="preload" as="image" href="images/cursor-goodwell.png">
+  <link rel="preload" as="image" href="images/cursor-west.png">
+  <link rel="preload" as="image" href="images/cursor-pretend.png">
+  <link rel="preload" as="image" href="images/cursor-arrow-prev-lo.png">
+  <link rel="preload" as="image" href="images/cursor-arrow-next-lo.png">
+  <link rel="preload" as="image" href="images/cursor-arrow-prev.png">
+  <link rel="preload" as="image" href="images/cursor-arrow-next.png">
+
+  <link rel="stylesheet" href="app.css">
+  <!-- Google Analytics -->
+  <script>
+    // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    //     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    //   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    // })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    //
+    // ga('create', 'UA-122579929-1', 'auto');
+    // ga('send', 'pageview');
+  </script>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen">
+    <!-- <img src="images/ok-logo-loader.png" /> -->
+    <svg class="loading-image" width="80" viewBox="0 0 478 271" xmlns="http://www.w3.org/2000/svg"><g fill-rule="nonzero"><path d="M135.95 270.92c-74.41 0-135-60.54-135-135C.95 61.46 61.49.97 135.95.97c74.46 0 135 60.54 135 135 0 74.46-60.59 134.95-135 134.95zm0-238.92c-57.437614 0-104 46.562386-104 104s46.562386 104 104 104 104-46.562386 104-104c-.044102-57.4225744-46.577435-103.9648559-104-104.02V32zM365.33 135.95L475.59 270.9h-37.36l-112.3-134.95L438.23 1h39.06z"/></g></svg>
+  </div>
+
+  <!-- Header -->
+  <header id="header">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="/" class="ga-track" data-category="Header Nav" data-action="Click" data-label="Logo">
+        <svg width="50" viewBox="0 0 478 271" xmlns="http://www.w3.org/2000/svg"><g fill-rule="nonzero"><path d="M135.95 270.92c-74.41 0-135-60.54-135-135C.95 61.46 61.49.97 135.95.97c74.46 0 135 60.54 135 135 0 74.46-60.59 134.95-135 134.95zm0-238.92c-57.437614 0-104 46.562386-104 104s46.562386 104 104 104 104-46.562386 104-104c-.044102-57.4225744-46.577435-103.9648559-104-104.02V32zM365.33 135.95L475.59 270.9h-37.36l-112.3-134.95L438.23 1h39.06z"/></g></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Menu Button -->
+  <button class="menu-button menu-line-wrapper" aria-label="Open and close navigation menu" onclick="toggleNav(this)" data-category="Header Nav" data-action="Click" data-label="Open About">
+    <span class="menu-line -top"></span>
+    <span class="menu-line -bottom"></span>
+  </button>
+
+  <!-- Menu Overlay -->
+  <section id="menu">
+    <div class="menu-container">
+      <div class="menu-item">
+        <a href="/">
+        Home
+        </a>
+      </div>
+      <div class="menu-item index-link" onclick="toggleIndex(this)">
+        Index
+      </div>
+      <div class="menu-item">
+        <a href="/about.html">
+        About
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="/workshops.html">
+        Workshops
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="/shop.html">
+        Shop
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="index-overlay">
+    <div class="index-title-container">
+      <h2 class="index-title goodwell">Goodwell</h2>
+      <h2 class="index-title west">West</h2>
+      <h2 class="index-title pretend">Pretend</h2>
+    </div>
+    <ul class="index-bg-wrapper">
+      <li class="index-bg-image goodwell"></li>
+      <li class="index-bg-image west"></li>
+      <li class="index-bg-image pretend"></li>
+    </ul>
+  </section>
+
+  <!-- Main Body Content -->
+
+  <!-- Landing -->
+  <!-- <canvas class="js-canvas"></canvas> -->
+  <section class="landing-slide">
+    <ul class="slides">
+      <a href="/goodwell.html"><li class="landing-project goodwell -active"></li></a>
+      <a href="/west.html"><li class="landing-project west"></li></a>
+      <a href="/pretend.html"><li class="landing-project pretend"></li></a>
+    </ul>
+
+    <ul class="slides-control">
+      <li class="slide-backward"></li>
+      <li class="slide-forward"></li>
+    </ul>
+
+
+    <!-- <div class="landing-text">
+      OK Studio
+    </div> -->
+  </section>
+
+  <!-- Content -->
+  <section id="arts" class="page">
+    <div class="page-content">
+      <div class="page-intro">
+        <p>
+          <span class="char-wrapper">
+            <span class="char-original show">OK</span>
+            <span class="char-emoji hide">👌</span>
+          </span>
+          <span class="char-wrapper">
+            <span class="char-original show">Studio</span>
+            <span class="char-emoji hide">🏡</span>
+          </span>
+          <span class="char-wrapper">
+            <span class="char-original show">is</span>
+            <span class="char-emoji hide">👀</span>
+          </span>
+          <span class="char-wrapper">
+            <span class="char-original show">a</span>
+            <span class="char-emoji hide">✨</span>
+          </span>
+          <span class="char-wrapper">
+            <span class="char-original show">no</span>
+            <span class="char-emoji hide">🚫</span>
+          </span>
+          <span class="char-wrapper">
+            <span class="char-original show">bullshit,</span>
+            <span class="char-emoji hide">💩</span>
+          </span>
+          <span class="char-wrapper">
+            <span class="char-original show">independent</span>
+            <span class="char-emoji hide">✍️</span>
+          </span>
+          <span class="char-wrapper">
+            <span class="char-original show">creative</span>
+            <span class="char-emoji hide">🎨</span>
+          </span>
+          <span class="char-wrapper">
+            <span class="char-original show">practice</span>
+            <span class="char-emoji hide">✨</span>
+          </span>
+          <span class="char-wrapper">
+            <span class="char-original show">based</span>
+            <span class="char-emoji hide">📍</span>
+          </span>
+          <span class="char-wrapper">
+            <span class="char-original show">in</span>
+            <span class="char-emoji hide">✨</span>
+          </span>
+          <span class="char-wrapper">
+            <span class="char-original show">Portland,</span>
+            <span class="char-emoji hide">🌲</span>
+          </span>
+          <span class="char-wrapper">
+            <span class="char-original show">Oregon.</span>
+            <span class="char-emoji hide">🏴󠁵󠁳󠁯󠁲󠁿</span>
+          </span>
+        </p>
+      </div>
+
+      <!-- E-mail Link -->
+      <a class="say-hello-link" href="mailto:inquire@hiokstudio.com">
+        <div class="say-hello">
+          Say hello <span class="say-hello-arrow">→</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content-wrapper">
+      <div class="footer-column copyright">
+        &copy;2018 OK Studio
+      </div>
+      <div class="footer-column tagline">
+        <div class="about">
+          <span class="bold-label">Inquiries</span><br/>
+          inquire@hiokstudio.com<br/>
+          T 503-660-8083
+        </div>
+      </div>
+      <div class="footer-column links">
+        <span class="bold-label">Follow</span><br/>
+        Instagram<br/>
+        Facebook<br/>
+        Twitter<br/>
+        Tumblr<br/>
+        <form>
+          <input placeholder="Stay Updated"></input>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/plugins/ScrollToPlugin.min.js"></script>
+  <script src="app.js"></script>
+
+</body>
+
+</html>
