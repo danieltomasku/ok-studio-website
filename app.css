@@ -120,7 +120,7 @@ video {
 }
 
 .carousel-cell {
-  width: 50%;
+  width: 63%;
   margin: 0 5%;
 }
 .carousel-image {
@@ -365,8 +365,30 @@ video {
 
 /* Emoji Word Replacement */
 
+.char-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.char-original {
+  position: relative;
+  visibility: visible;
+  opacity: 1;
+  transition: all .6s;
+}
+
 .char-emoji {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  transition: all .6s;
+}
+
+.char-emoji img {
+  width: 94px;
 }
 
 .char-wrapper:nth-child(1) .char-emoji {
@@ -384,25 +406,41 @@ video {
 .char-wrapper:nth-child(5) .char-emoji {
   animation-delay: .5s !important;
 }
+.char-wrapper:nth-child(5) .char-emoji {
+  animation-delay: .6s !important;
+}
+.char-wrapper:nth-child(5) .char-emoji {
+  animation-delay: .7s !important;
+}
+.char-wrapper:nth-child(5) .char-emoji {
+  animation-delay: .8s !important;
+}
 
 .hide {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .show {
   display: inline-block;
 }
 
+.char-emoji.show {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
 
 @keyframes wave {
   0% {
-    transform: translateY(0px);
+    transform: translate(-50%, 0px);
   }
   50% {
-    transform: translateY(-40px)
+    transform: translate(-50%, -40px)
   }
   100% {
-    transform: translateY(0px);
+    transform: translate(-50%, 0px);
   }
 }
 
@@ -924,7 +962,40 @@ input:focus {
   font-family: GTWalsheim, sans-serif;
   pointer-events: auto;
   cursor: pointer;
+  position: relative;
 }
+
+.index-title:before, .index-title:after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 8px;
+  top: 50%;
+  margin-top: -0.5px;
+  background: #fff;
+}
+
+.index-title:before {
+  left: -2.5px;
+}
+.index-title:after {
+  right: 2.5px;
+  background: #fff;
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.index-title:hover:before {
+  background: #fff;
+  width: 100%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.index-title:hover:after {
+  background: transparent;
+  width: 100%;
+  transition: 0s;
+}
+
 
 .index-bg-wrapper {
   display: block;
@@ -981,10 +1052,6 @@ input:focus {
   opacity: 1;
   visibility: visible;
 }*/
-
-.hide {
-  visibility: hidden;
-}
 
 #arts {
   margin-top: 100vh;
