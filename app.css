@@ -388,7 +388,7 @@ video {
 }
 
 .char-emoji img {
-  width: 94px;
+  width: 6vw;
 }
 
 .char-wrapper:nth-child(1) .char-emoji {
@@ -510,7 +510,7 @@ video {
   z-index: 200;
   transition: opacity 1.5s;
   cursor: none;
-  font-family: GTWalsheim, san-serif;
+  font-family: GTWalsheim, sans-serif;
 }
 
 .loading-project-name {
@@ -538,22 +538,27 @@ video {
   0% {
     background-color: #143e3b;
   }
-  16.7% {
+  14% {
     background-color: #d6a49a;
   }
-  33.3% {
+  28% {
     background-color: #dddfe2;
   }
-  50% {
+  42% {
     background-color: #282626;
   }
-  66.7% {
+  57% {
     background-color: #fbaf23;
   }
-  100% {
+  71% {
     background-color: #bd401b;
   }
+  100% {
+    background-color: #143e3b;
+  }
 }
+
+
 
 .footer-content-wrapper {
   /*height: 100px;*/
@@ -702,8 +707,7 @@ h2 {
 }
 
 .menu-button:hover {
-  cursor: url('images/hover-arrow-open.png') 32 32, auto;
-  cursor: -webkit-image-set(url('images/hover-arrow-open.png') 1x, url('images/hover-arrow-open@2x.png') 2x) 32 32, pointer; /* Webkit */
+  cursor: pointer;
 }
 
 .menu-button:focus {
@@ -927,7 +931,7 @@ input:focus {
 #index-overlay {
   width: 100vw;
   height: 100vh;
-  background-color: pink;
+  animation: colorBlend 20s infinite;
   color: black;
   position: fixed;
   top: 0;
@@ -950,6 +954,11 @@ input:focus {
   left: 50%;
   text-align: center;
   z-index: 105;
+}
+
+.index-title-container a {
+  color: white;
+  text-decoration: none;
 }
 
 .index-link {

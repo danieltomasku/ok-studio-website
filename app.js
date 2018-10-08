@@ -55,15 +55,10 @@ window.onload = function () {
   viewportHeight = window.innerHeight;
   navBarPos();
 };
-// window.onscroll = function () {
-//   // stickify();
-// };
 window.ontouchmove = function () {
-  // stickify();
   scrollPos = window.pageYOffset;
 };
 window.onresize = function () {
-  // stickify();
 };
 
 function navBarPos () {
@@ -73,79 +68,6 @@ function navBarPos () {
   housingNavTopLoad = viewportHeight - 90;
   humanrightsNavTopLoad = viewportHeight - 45;
 }
-
-// function stickify() {
-//   navBarPos();
-//   let headerElBottom = headerEl.getBoundingClientRect().bottom,
-//       artsElTop = Math.round(artsEl.getBoundingClientRect().top),
-//       educationElTop = Math.round(educationEl.getBoundingClientRect().top),
-//       housingElTop = Math.round(housingEl.getBoundingClientRect().top),
-//       humanrightsElTop = Math.round(humanrightsEl.getBoundingClientRect().top);
-//
-//   if (artsElTop <= artsNavTopLoad) {
-//     artsNav.classList.add('hidden');
-//   } else {
-//     artsNav.classList.remove('hidden');
-//   }
-//
-//   if (artsElTop <= headerElBottom) {
-//     artstitleBar.classList.add('sticky');
-//     if (artsEventFired === 0) {
-//       ga('send', 'event', 'Section Started', 'Scroll', 'Arts');
-//       artsEventFired = 1;
-//     }
-//   } else {
-//     artstitleBar.classList.remove('sticky');
-//   }
-//
-//   if (educationElTop <= educationNavTopLoad) {
-//     educationNav.classList.add('hidden');
-//   } else {
-//     educationNav.classList.remove('hidden');
-//   }
-//
-//   if (educationElTop <= headerElBottom) {
-//     educationtitleBar.classList.add('sticky');
-//     if (educationEventFired === 0) {
-//       ga('send', 'event', 'Section Started', 'Scroll', 'Education');
-//       educationEventFired = 1;
-//     }
-//   } else {
-//     educationtitleBar.classList.remove('sticky');
-//   }
-//
-//   if (housingElTop <= housingNavTopLoad) {
-//     housingNav.classList.add('hidden');
-//   } else {
-//     housingNav.classList.remove('hidden');
-//   }
-//
-//   if (housingElTop <= headerElBottom) {
-//     housingtitleBar.classList.add('sticky');
-//     if (housingEventFired === 0) {
-//       ga('send', 'event', 'Section Started', 'Scroll', 'Housing');
-//       housingEventFired = 1;
-//     }
-//   } else {
-//     housingtitleBar.classList.remove('sticky');
-//   }
-//
-//   if (humanrightsElTop <= humanrightsNavTopLoad) {
-//     humanrightsNav.classList.add('hidden');
-//   } else {
-//     humanrightsNav.classList.remove('hidden');
-//   }
-//
-//   if (humanrightsElTop <= headerElBottom) {
-//     humanrightstitleBar.classList.add('sticky');
-//     if (humanrightsEventFired === 0) {
-//       ga('send', 'event', 'Section Started', 'Scroll', 'Human Rights');
-//       humanrightsEventFired = 1;
-//     }
-//   } else {
-//     humanrightstitleBar.classList.remove('sticky');
-//   }
-// }
 
 // Intro Animation
 
@@ -157,9 +79,6 @@ x = w.innerWidth||e.clientWidth||g.clientWidth,
 is_root = location.pathname == "/";
 
 function fadeIn() {
-  // var landingTextEl = document.getElementsByClassName('landing-text');
-  // landingTextEl[0].style.opacity = 1;
-
   setTimeout(function(){
     loadingScreen.style.opacity = 0;
   }, 2000);
@@ -167,20 +86,6 @@ function fadeIn() {
   setTimeout(function(){
     loadingScreen.style.display = 'none';
   }, 3200);
-
-  // if (x > 768) {
-  //   landingTextEl[0].style.transform = 'translate(0, -50%)';
-  // } else {
-  //   landingTextEl[0].style.transform = 'translate(0, -65%)';
-  // }
-
-  // setTimeout(function(){
-  //   // stickify();
-  //   artsNav.style.transform = 'translateY(0px)';
-  //   educationNav.style.transform = 'translateY(0px)';
-  //   housingNav.style.transform = 'translateY(0px)';
-  //   humanrightsNav.style.transform = 'translateY(0px)';
-  // }, 0);
 
   setTimeout(function(){
     if (scrollPos < 1) {
