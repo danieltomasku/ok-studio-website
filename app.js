@@ -255,33 +255,30 @@ if (slideForward) {
 }
 
 
-// PROJECT SLIDER
-const projectSliders = document.querySelectorAll('.main-carousel');
+// PROJECT CAROUSELS
+var carouselContainers = document.querySelectorAll('.carousel-wrapper');
 
-if (projectSliders) {
-  // var flkty = new Flickity('.main-carousel', {
-  //   contain: false,
-  //   pageDots: false
-  // });
-
-  for ( var i=0, len = projectSliders.length; i < len; i++ ) {
-    var projectSlider = projectSliders[i];
-    var flkty = new Flickity( projectSlider, {
-      contain: false,
-      pageDots: false
-    });
-  }
-
-  // var carouselStatus = document.querySelector('.carousel-status');
-  // function updateStatus() {
-  //   var slideNumber = flkty.selectedIndex + 1;
-  //   carouselStatus.textContent = slideNumber + ' / ' + flkty.slides.length;
-  // }
-  // updateStatus();
-  //
-  // flkty.on( 'select', updateStatus );
+for ( var i=0; i < carouselContainers.length; i++ ) {
+  var container = carouselContainers[i];
+  initCarouselContainer( container );
 }
 
+function initCarouselContainer( container ) {
+  var carousel = container.querySelector('.main-carousel');
+  var flkty = new Flickity(carousel, {
+    contain: false,
+    pageDots: false
+  });
+  var carouselStatus = container.querySelector('.carousel-status');
+
+  function updateStatus() {
+    var slideNumber = flkty.selectedIndex + 1;
+    carouselStatus.textContent = slideNumber + ' / ' + flkty.slides.length;
+  }
+  updateStatus();
+
+  flkty.on( 'select', updateStatus );
+}
 
 // BACKGROUND COLOR FADE
 let vph = window.innerHeight;
