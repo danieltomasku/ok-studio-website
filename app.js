@@ -16,11 +16,6 @@
 //   ga('send', 'event', elCategory, elAction, elLabel);
 // }
 
-artsEventFired = 0;
-educationEventFired = 0;
-housingEventFired = 0;
-humanrightsEventFired = 0;
-
 
 // Sticky Scroll Functionality
 var scrollPos;
@@ -54,6 +49,7 @@ window.onload = function () {
   fadeIn();
   viewportHeight = window.innerHeight;
   navBarPos();
+  lazy.length && lazyLoad();
 };
 window.ontouchmove = function () {
   scrollPos = window.pageYOffset;
@@ -115,7 +111,26 @@ function fadeIn() {
 
 }
 
-// Menu Functionality
+// LAZY LOAD
+var lazy = document.getElementsByClassName('js-lazy');
+if(lazy.length){
+  function lazyLoad() {
+    for (var i=0; i < lazy.length; i++) {
+      var lazyDataSrc = lazy[i].getAttribute('data-src');
+      if(lazyDataSrc) {
+        lazy[i].setAttribute('src', lazyDataSrc);
+      }
+      if (lazy[i].parentNode.nodeName === 'VIDEO') {
+        var video = lazy[i].parentNode;
+        video.load();
+        video.play();
+      }
+    }
+  }
+  // window.onload = lazyLoad;
+}
+
+// MENU FUNCTIONALITY
 
 function handleClickOutsideAbout() {
   var specifiedElement = document.getElementById('menu');
@@ -169,9 +184,7 @@ function toggleNav(e) {
   }
 
   document.body.classList.contains('lock-scroll') && !overlay.classList.contains('move') ? document.body.classList.remove('lock-scroll') : document.body.classList.add('lock-scroll');
-  // setTimeout(function(){
-  //   // document.getElementsByClassName('content-overlay')[0].classList.remove('hide');
-  // }, 600);
+
   var eventList = ['click', 'touchstart'];
   eventList.forEach(function(event) {
     document.addEventListener(event, handleClickOutsideAbout);
@@ -182,7 +195,6 @@ function toggleNav(e) {
 function closeNav() {
   document.getElementById('menu').classList.remove('move');
   document.body.classList.remove('lock-scroll');
-  // document.getElementsByClassName('content-overlay')[0].classList.add('hide');
   var eventList = ['click', 'touchstart'];
   eventList.forEach(function(event) {
     document.removeEventListener(event, handleClickOutsideAbout);
@@ -190,36 +202,7 @@ function closeNav() {
 }
 
 
-// Animate to Section Functionality
-
-function animateToAnchor1(e) {
-  var anchor1 = document.getElementById('arts');
-  var posTop = anchor1.offsetTop - 90;
-  TweenMax.to(window, 1.7, {scrollTo:posTop, ease: Power4.easeInOut});
-  sendAnalytics(e);
-}
-
-function animateToAnchor2(e) {
-  var anchor2 = document.getElementById('education');
-  var posTop = anchor2.offsetTop - 90;
-  TweenMax.to(window, 1.7, {scrollTo:posTop, ease: Power4.easeInOut});
-  sendAnalytics(e);
-}
-
-function animateToAnchor3(e) {
-  var anchor3 = document.getElementById('housing');
-  var posTop = anchor3.offsetTop - 90;
-  TweenMax.to(window, 1.7, {scrollTo:posTop, ease: Power4.easeInOut});
-  sendAnalytics(e);
-}
-
-function animateToAnchor4(e) {
-  var anchor4 = document.getElementById('humanrights');
-  var posTop = anchor4.offsetTop - 90;
-  TweenMax.to(window, 1.7, {scrollTo:posTop, ease: Power4.easeInOut});
-  sendAnalytics(e);
-}
-
+// ANIMATE TO TOP
 function animateToTop(e) {
   TweenMax.to(window, 1.7, {scrollTo:0, ease: Power4.easeInOut});
 }

@@ -190,6 +190,18 @@ video {
   transition: background-color .8s ease;
 }
 
+#about.project-content {
+  background: transparent; /* fallback color */
+  overflow: auto;
+  transition: background-color .8s ease;
+}
+
+body.about-page {
+  background: linear-gradient( to bottom, #d6a095, #be4010);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .pink {
   background-color: #ffc5a6 !important;
 }
@@ -225,6 +237,27 @@ video {
   font-family: GTWalsheim-Light, sans-serif;
   font-size: 20px;
   line-height: 1.7;
+}
+
+.about-hero {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  /*opacity: 0;*/
+  z-index: 1;
+  transition: opacity 1s;
+  background-color: transparent;
+}
+
+.about-shape {
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  width: 70vw;
+  z-index: -1;
 }
 
 .project-hero {
@@ -556,6 +589,16 @@ video {
   100% {
     background-color: #143e3b;
   }
+}
+
+.hero-title {
+  font-size: 75px;
+  font-family: GTWalsheim-Medium, sans-serif;
+  color: white;
+  padding: 0 78px;
+  transform: translateY(-50%);
+  top: 50%;
+  position: absolute;
 }
 
 
