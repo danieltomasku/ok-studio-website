@@ -25,8 +25,11 @@
 }
 
 html, body {
-  height:100%;
   margin: 0;
+}
+
+body {
+  height: 100%;
 }
 
 header {
@@ -194,12 +197,19 @@ video {
   background: transparent; /* fallback color */
   overflow: auto;
   transition: background-color .8s ease;
+  color: white;
 }
 
 body.about-page {
   background: linear-gradient( to bottom, #d6a095, #be4010);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.section-right-image {
+  width: 45%;
+  float: right;
+  position: relative
 }
 
 .pink {
@@ -247,16 +257,32 @@ body.about-page {
   width: 100%;
   height: 100%;
   /*opacity: 0;*/
-  z-index: 1;
   transition: opacity 1s;
   background-color: transparent;
 }
 
+.about-contact {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 18px;
+  padding: 0 100px;
+  font-family: GTWalsheim, sans-serif;
+  color: white;
+}
+
+.role.three-up {
+  font-size: 18px;
+  width: 33.333%;
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 0 3% 0px 0;
+}
+
 .about-shape {
   position: absolute;
-  top: -20px;
-  left: -10px;
-  width: 70vw;
+  top: -122px;
+  left: -100px;
+  width: 74vw;
   z-index: -1;
 }
 
@@ -266,7 +292,7 @@ body.about-page {
   left: 0;
   display: block;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   /*opacity: 0;*/
   z-index: 1;
   transition: opacity 1s;
@@ -292,7 +318,7 @@ body.about-page {
 .section-description {
   font-size: 20px;
   line-height: 2;
-  width: 50%;
+  width: 45%;
 }
 
 .roles {
@@ -315,6 +341,7 @@ body.about-page {
 
 .role-item {
   margin-bottom: 12px;
+  line-height: 1.7;
 }
 
 .slides {
@@ -595,13 +622,10 @@ body.about-page {
   font-size: 75px;
   font-family: GTWalsheim-Medium, sans-serif;
   color: white;
-  padding: 0 78px;
-  transform: translateY(-50%);
-  top: 50%;
-  position: absolute;
+  padding: 0 100px;
+  position: relative;
+  margin: 30vh 0 55px;
 }
-
-
 
 .footer-content-wrapper {
   /*height: 100px;*/
