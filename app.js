@@ -20,35 +20,14 @@
 // Sticky Scroll Functionality
 var scrollPos;
 
-var artsNav = document.getElementById('nav-arts');
-var artsNavTopLoad;
-var educationNav = document.getElementById('nav-education');
-var educationNavTopLoad;
-var housingNav = document.getElementById('nav-housing');
-var housingNavTopLoad;
-var humanrightsNav = document.getElementById('nav-humanrights');
-var humanrightsNavTopLoad;
-
-var artsEl = document.getElementById('arts');
-var educationEl = document.getElementById('education');
-var housingEl = document.getElementById('housing');
-var humanrightsEl = document.getElementById('humanrights');
-var artstitleBar = document.querySelector('#arts .title-bar');
-var educationtitleBar = document.querySelector('#education .title-bar');
-var housingtitleBar = document.querySelector('#housing .title-bar');
-var humanrightstitleBar = document.querySelector('#humanrights .title-bar');
-
+var artsEl = document.getElementById('homepage');
+var artstitleBar = document.querySelector('#homepage .title-bar');
 
 var loadingScreen = document.querySelector('.loading-screen');
-
-var headerEl = document.getElementById('header');
-var viewportHeight;
 
 window.onload = function () {
   scrollPos = window.pageYOffset;
   fadeIn();
-  viewportHeight = window.innerHeight;
-  navBarPos();
   lazy.length && lazyLoad();
 };
 window.ontouchmove = function () {
@@ -56,14 +35,6 @@ window.ontouchmove = function () {
 };
 window.onresize = function () {
 };
-
-function navBarPos () {
-  viewportHeight = window.innerHeight;
-  artsNavTopLoad = viewportHeight - 180;
-  educationNavTopLoad = viewportHeight - 135;
-  housingNavTopLoad = viewportHeight - 90;
-  humanrightsNavTopLoad = viewportHeight - 45;
-}
 
 // Intro Animation
 
@@ -97,7 +68,7 @@ function fadeIn() {
     }, 1800);
   }
 
-  const artsElement = document.getElementById('arts');
+  const artsElement = document.getElementById('homepage');
 
   if (artsElement) {
     if (!scrollPos || scrollPos < 1) {
@@ -143,6 +114,8 @@ function handleClickOutsideAbout() {
   }
 }
 
+
+// INDEX MENU FUNCTIONALITY
 const indexBgImages = document.querySelectorAll('.index-bg-image');
 const indexTitles = document.querySelectorAll('.index-title');
 
@@ -150,9 +123,7 @@ indexTitles.forEach(item => {
   item.addEventListener('mouseenter', hoverIndexBgImage);
 })
 
-
 function hoverIndexBgImage() {
-  console.log(this.classList[1]);
   indexBgImages.forEach(item => {
     if (item.classList[1] === this.classList[1]) {
       item.classList.add('move');
@@ -166,7 +137,6 @@ function toggleIndex(e) {
   const overlay = document.getElementById('index-overlay');
   overlay.classList.contains('move') ? overlay.classList.remove('move') : overlay.classList.add('move');
 }
-
 
 function toggleNav(e) {
   var about = document.getElementsByClassName('menu-button')[0];
@@ -250,7 +220,8 @@ function initCarouselContainer( container ) {
   var carousel = container.querySelector('.main-carousel');
   var flkty = new Flickity(carousel, {
     contain: false,
-    pageDots: false
+    pageDots: false,
+    imagesLoaded: true
   });
   var carouselStatus = container.querySelector('.carousel-status');
 
@@ -288,7 +259,7 @@ let fadeUpElements = [...document.querySelectorAll('.js-fade-up')];
 
 function inView (el) {
   var eb = el.getBoundingClientRect();
-  return !((eb.top + eb.height < 0) || (eb.top > vph - 200));
+  return !((eb.top + eb.height < 0) || (eb.top > vph - 180));
 }
 
 function updateInView() {
@@ -313,7 +284,6 @@ const allCharWrapper = Array.from(document.querySelectorAll('.char-wrapper'));
 const allCharOriginal = Array.from(document.querySelectorAll('.char-original'));
 const allCharEmoji = Array.from(document.querySelectorAll('.char-emoji'));
 
-
 document.body.addEventListener('click', resetChars);
 
 allCharWrapper.forEach((item) => {
@@ -321,7 +291,6 @@ allCharWrapper.forEach((item) => {
     handleMouseEnter(event);
   });
 });
-
 
 function handleMouseEnter(event) {
   if (event.target.children[0].classList.contains('show')) {
@@ -345,8 +314,6 @@ function handleMouseEnter(event) {
       item.style.animation = '';
     })
   }
-
-
 };
 
 function resetChars() {

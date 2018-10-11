@@ -874,7 +874,7 @@ h2 {
 .page {
   padding: 0 0 20px;
   background-color: white;
-  backface-visibility: hidden;
+  /*backface-visibility: hidden;*/
 }
 
 .page-content {
@@ -1152,7 +1152,7 @@ input:focus {
   visibility: visible;
 }*/
 
-#arts {
+#homepage {
   margin-top: 100vh;
   opacity: 0;
 }
@@ -1163,6 +1163,14 @@ input:focus {
 @media only screen and (max-width: 768px) {
     header {
       padding: 0 23px;
+    }
+
+    footer {
+      height: 500px;
+    }
+
+    .index-title {
+      font-size: 48px;
     }
 
     .nav {
@@ -1212,10 +1220,79 @@ input:focus {
       transform: translateX(90vw);*/
     }
 
+    .section-description {
+      width: 100%;
+    }
+
+    .role {
+      font-size: 18px;
+      width: 100%;
+      display: inline-block;
+      margin-bottom: 30px;
+    }
+
     .section-wrapper {
       padding: 0 24px;
       font-family: GTWalsheim-Thin;
       margin: 64px 0;
+    }
+
+    .project-title {
+      font-size: 20px;
+    }
+
+    .project-tagline {
+      font-size: 50px;
+    }
+
+    .intro {
+      width: 100%;
+      display: inline-block;
+      position: relative;
+      padding: 0;
+      margin: 0;
+    }
+
+    .description {
+      width: 100%;
+      float: none;
+      display: inline-block;
+      position: relative;
+      margin: 21px 0 0;
+      padding: 0;
+    }
+
+    .heading-w-text-wrapper {
+      flex-wrap: wrap;
+    }
+
+    .heading-w-text-wrapper > .heading {
+      width: 100%;
+      padding: 0;
+    }
+
+    .heading-w-text-wrapper > .text {
+      width: 100%;
+      padding: 0;
+      margin: 21px 0 0;
+    }
+
+    .flickity-prev-next-button {
+      width: 20%;
+      right: 0 !important;
+      opacity: 0 !important;
+    }
+
+    .flickity-prev-next-button.next {
+      right: 0 !important;
+    }
+
+    .flickity-prev-next-button.previous {
+      left: 0 !important;
+    }
+
+    .carousel-wrapper {
+      margin: 120px 0;
     }
 
     .carousel-cell {
