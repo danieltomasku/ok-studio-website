@@ -372,7 +372,7 @@ if (scrollProgress) {
   progressPath.style.strokeWidth = 20;
   progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
   progressPath.style.strokeDashoffset = pathLength;
-  progressPath.getBoundingClientRect();
+  // progressPath.getBoundingClientRect();
 
   function updateProgress() {
     var progress = pathLength - ( window.pageYOffset * pathLength / ( document.body.scrollHeight - window.innerHeight ) );
