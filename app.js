@@ -16,13 +16,7 @@
 //   ga('send', 'event', elCategory, elAction, elLabel);
 // }
 
-
-// Sticky Scroll Functionality
 var scrollPos;
-
-var artsEl = document.getElementById('homepage');
-var artstitleBar = document.querySelector('#homepage .title-bar');
-
 var loadingScreen = document.querySelector('.loading-screen');
 
 window.onload = function () {
@@ -60,26 +54,12 @@ function fadeIn() {
     }
   }, 2000);
 
-
   if (scrollPos < 1) {
     document.body.classList.add('lock-scroll');
     setTimeout(function(){
       document.body.classList.remove('lock-scroll');
     }, 1800);
   }
-
-  const artsElement = document.getElementById('homepage');
-
-  if (artsElement) {
-    if (!scrollPos || scrollPos < 1) {
-      setTimeout(function(){
-        artsElement.style.opacity = 1;
-      }, 1700);
-    } else {
-      artsElement.style.opacity = 1;
-    }
-  }
-
 }
 
 // LAZY LOAD
@@ -101,27 +81,13 @@ if(lazy.length){
   // window.onload = lazyLoad;
 }
 
-// MENU FUNCTIONALITY
-
-function handleClickOutsideAbout() {
-  var specifiedElement = document.getElementById('menu');
-  var isClickInside = specifiedElement.contains(event.target);
-  var about = document.getElementsByClassName('menu-button')[0];
-  var isAbout = about == event.target;
-
-  if (!isClickInside && !isAbout) {
-    closeNav();
-  }
-}
-
-
 // INDEX MENU FUNCTIONALITY
 const indexBgImages = document.querySelectorAll('.index-bg-image');
 const indexTitles = document.querySelectorAll('.index-title');
 
 indexTitles.forEach(item => {
   item.addEventListener('mouseenter', hoverIndexBgImage);
-})
+});
 
 function hoverIndexBgImage() {
   indexBgImages.forEach(item => {
@@ -130,7 +96,7 @@ function hoverIndexBgImage() {
     } else {
       item.classList.remove('move');
     }
-  })
+  });
 }
 
 function toggleIndex(e) {
@@ -138,6 +104,8 @@ function toggleIndex(e) {
   overlay.classList.contains('move') ? overlay.classList.remove('move') : overlay.classList.add('move');
 }
 
+
+// MENU FUNCTIONALITY
 function toggleNav(e) {
   var about = document.getElementsByClassName('menu-button')[0];
   var overlay = document.getElementById('menu');
@@ -154,11 +122,6 @@ function toggleNav(e) {
   }
 
   document.body.classList.contains('lock-scroll') && !overlay.classList.contains('move') ? document.body.classList.remove('lock-scroll') : document.body.classList.add('lock-scroll');
-
-  var eventList = ['click', 'touchstart'];
-  eventList.forEach(function(event) {
-    document.addEventListener(event, handleClickOutsideAbout);
-  });
   // sendAnalytics(e);
 }
 
@@ -234,6 +197,7 @@ function initCarouselContainer( container ) {
   flkty.on( 'select', updateStatus );
 }
 
+
 // BACKGROUND COLOR FADE
 let vph = window.innerHeight;
 
@@ -279,7 +243,6 @@ updateInView();
 
 
 // EMOJI WORD REPLACEMENT
-
 const allCharWrapper = Array.from(document.querySelectorAll('.char-wrapper'));
 const allCharOriginal = Array.from(document.querySelectorAll('.char-original'));
 const allCharEmoji = Array.from(document.querySelectorAll('.char-emoji'));
