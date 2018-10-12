@@ -74,7 +74,6 @@ if(lazy.length){
       if (lazy[i].parentNode.nodeName === 'VIDEO') {
         var video = lazy[i].parentNode;
         video.load();
-        video.play();
       }
     }
   }
@@ -220,8 +219,9 @@ triggerElement && fadeBackground();
 
 // FADE-UP WHEN ELEMENTS ENTER VIEWPORT
 let fadeUpElements = [...document.querySelectorAll('.js-fade-up')];
+let projectVideos = document.querySelectorAll('.project-video');
 
-function inView (el) {
+function inView(el) {
   var eb = el.getBoundingClientRect();
   return !((eb.top + eb.height < 0) || (eb.top > vph - 180));
 }
@@ -229,6 +229,9 @@ function inView (el) {
 function updateInView() {
   fadeUpElements.forEach(item => {
     inView(item) && item.classList.add('fade-up');
+  });
+  projectVideos.forEach(item => {
+    inView(item.parentNode) && item.parentNode.play();
   });
 }
 
@@ -325,6 +328,14 @@ if (scrollProgress) {
   // Call the loop for the first time
   loop();
 }
+
+
+// CUSTOM MOUSE CURSOR USING DIV
+// document.body.addEventListener('mousemove', function(e) {
+//   var bx = document.getElementById("box");
+//   bx.style.left = e.pageX + 'px';
+//   bx.style.top = e.pageY + 'px';
+// });
 
 
 // CUSTOM MOUSE CURSOR
