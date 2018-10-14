@@ -212,7 +212,7 @@ video {
 }
 
 body.about-page {
-  background: linear-gradient( to bottom, #d6a095, #be4010);
+  /*background: linear-gradient( to bottom, #d6a095, #be4010);*/
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -496,6 +496,11 @@ body.about-page {
   margin: 0;
   font-size: 60px;
   font-family: GTWalsheim-Bold, sans-serif;
+}
+
+.pillar-wrapper h4 {
+  font-size: 60px;
+  margin: 12px 0;
 }
 
 .pillar-left {
