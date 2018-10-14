@@ -289,6 +289,93 @@ body.about-page {
   padding: 30vh 100px 0;
 }
 
+.shop-hero {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  /*opacity: 0;*/
+  transition: opacity 1s;
+  background-color: transparent;
+  padding: 30vh 100px 0;
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+}
+
+.shop-hero-text-wrapper {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.shop-cta a {
+  font-family: GTWalsheim, sans-serif;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.shop-grid-wrapper {
+  position: relative;
+  background-color: black;
+}
+
+.shop-grid-wrapper a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.left-column {
+  width: 50%;
+  display: inline-block;
+}
+
+.right-column {
+  width: 50%;
+  display: inline-block;
+  float: right;
+}
+
+.shop-grid-item {
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+  position: relative;
+}
+
+.shop-grid-item.tall {
+  height: 120vh;
+}
+
+.shop-grid-item.one {
+  height: 60vh;
+}
+
+.shop-grid-item h4 {
+  position: absolute;
+  display: block;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  font-family: GTWalsheim-Bold, sans-serif;
+  font-size: 60px;
+  color: white;
+  margin: 0;
+}
+
+.hero-title.centered {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
 .about-contact {
   display: flex;
   flex-wrap: wrap;
@@ -332,7 +419,6 @@ body.about-page {
   /*opacity: 0;*/
   z-index: 1;
   transition: opacity 1s;
-  background-image: url('images/goodwell-1.png');
   background-size: cover;
   background-position: center center;
 }
@@ -383,6 +469,7 @@ body.about-page {
 
 .role-image-wrapper img {
   max-height: 200px;
+  margin-bottom: 36px;
 }
 
 .role-item {
@@ -1204,6 +1291,10 @@ input:focus {
       font-size: 48px;
     }
 
+    .index-title:before, .index-title:after {
+      display: none;
+    }
+
     .nav {
       padding: 12px 23px;
     }
@@ -1235,6 +1326,11 @@ input:focus {
       right: 25px;
       font-size: 14px;
     }
+
+    .shop-grid-item h4 {
+      font-size: 28px;
+    }
+
     .landing-text {
       line-height: 1.2;
       font-size: 40px;
