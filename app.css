@@ -477,6 +477,32 @@ body.about-page {
   line-height: 1.7;
 }
 
+.cta-wrapper {
+  position: relative;
+  display: block;
+  width: auto;
+  margin: 24px 0;
+}
+
+.cta {
+  border: 1px solid white;
+  background-color: transparent;
+  padding: 17px 40px;
+  color: white;
+  font-family: GTWalsheim-Thin, sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  display: inline-block;
+  width: auto;
+  text-decoration: none;
+  transition: .3s ease-in-out;
+}
+
+.cta:hover {
+  background-color: white;
+  color: black;
+}
+
 .pillar-wrapper {
   display: flex;
 }
