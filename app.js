@@ -50,7 +50,7 @@ function fadeIn() {
 
   setTimeout(function(){
     if (scrollPos < 1) {
-      TweenMax.to(window, 1.7, {scrollTo:125, ease: Power4.easeInOut});
+      TweenMax.to(window, 1.7, {scrollTo:35, ease: Power4.easeInOut});
     }
   }, 2000);
 
@@ -308,6 +308,11 @@ if (scrollProgress) {
   // progressPath.getBoundingClientRect();
 
   function updateProgress() {
+    if (lastPosition > 200) {
+      scrollProgress.classList.remove('hide');
+    } else {
+      scrollProgress.classList.add('hide');
+    }
     var progress = pathLength - ( window.pageYOffset * pathLength / ( document.body.scrollHeight - window.innerHeight ) );
 
     // Update dashOffset

@@ -191,6 +191,7 @@ video {
   background-color: transparent;
   border: none;
   outline: none;
+  transition: opacity .5s, visibility .5s;
 }
 
 .scroll-progress:hover {
@@ -470,6 +471,14 @@ body.about-page {
 .role-image-wrapper img {
   max-height: 200px;
   margin-bottom: 36px;
+}
+
+.image-off, .role-image-wrapper:hover .image-on {
+  display: none;
+}
+
+.image-on, .role-image-wrapper:hover .image-off {
+  display: block;
 }
 
 .role-item {
@@ -992,6 +1001,7 @@ h2 {
 
 .menu-item a:hover {
   color: black;
+  cursor: pointer;
 }
 
 .menu-item:hover {
@@ -1079,7 +1089,7 @@ h2 {
   padding-left: 4px;
 }
 
-.say-hello-link:hover .say-hello-arrow {
+a:hover .say-hello-arrow {
   transform: translateX(4px);
 }
 
@@ -1187,6 +1197,19 @@ input:focus {
   visibility: hidden;
 }
 
+.social-icons-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  height: 60px;
+  align-items: center;
+}
+
+.social-icons-item {
+  width: 40px;
+  margin: 0 0 0 24px;
+}
+
 #index-overlay {
   width: 100vw;
   height: 100vh;
@@ -1218,10 +1241,6 @@ input:focus {
 .index-title-container a {
   color: white;
   text-decoration: none;
-}
-
-.index-link {
-  cursor: pointer;
 }
 
 .index-title {
