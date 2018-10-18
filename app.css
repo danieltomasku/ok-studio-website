@@ -108,7 +108,7 @@ video {
 
 .flickity-prev-next-button {
   top: 50%;
-  width: 140px;
+  width: 50%;
   opacity: 0 !important;
   height: 100%;
   border-radius: 0;
@@ -124,6 +124,13 @@ video {
   cursor: -webkit-image-set(url('images/cursor-arrow-next-lo.png') 1x, url('images/cursor-arrow-next.png') 2x) 32 32, pointer; /* Webkit */
 }
 
+.flickity-prev-next-button.previous {
+  left: 0;
+}
+
+.flickity-prev-next-button.next {
+  right: 0;
+}
 
 .carousel-wrapper {
   display: block;
@@ -772,7 +779,7 @@ body.about-page {
   z-index: 200;
   transition: opacity 1.5s;
   cursor: none;
-  font-family: GTWalsheim, sans-serif;
+  font-family: GTWalsheim-Light, sans-serif;
 }
 
 .loading-project-name {
@@ -781,7 +788,7 @@ body.about-page {
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  font-size: 100px;
+  font-size: 90px;
   color: white;
 }
 
@@ -985,7 +992,7 @@ h2 {
 .menu-item {
   color: #dddfe2;
   font-family: GTWalsheim-Light, sans-serif;
-  font-size: 96px;
+  font-size: 90px;
   margin: 1% 0 21px;
   text-align: right;
   line-height: 1;
@@ -1061,10 +1068,10 @@ h2 {
 }
 
 .page-intro {
-  font-family: GTWalsheim, sans-serif;
+  font-family: GTWalsheim-Light, sans-serif;
   font-weight: normal;
   font-size: 4.6vw;
-  width: 75%;
+  width: 70%;
   max-width: 1400px;
   text-align: center;
   margin: 60px auto;
@@ -1246,7 +1253,7 @@ input:focus {
 .index-title {
   color: white;
   font-size: 90px;
-  font-family: GTWalsheim, sans-serif;
+  font-family: GTWalsheim-Light, sans-serif;
   pointer-events: auto;
   cursor: pointer;
   position: relative;
@@ -1256,7 +1263,7 @@ input:focus {
   content: '';
   position: absolute;
   width: 0%;
-  height: 8px;
+  height: 6px;
   top: 50%;
   margin-top: -0.5px;
   background: #fff;
@@ -1385,6 +1392,10 @@ input:focus {
       line-height: 1.2;
       font-size: 40px;
       left: 23px;
+    }
+
+    .social-icons-wrapper {
+      margin-top: 50px;
     }
 
     .about-shape {

@@ -179,11 +179,13 @@ for ( var i=0; i < carouselContainers.length; i++ ) {
 }
 
 function initCarouselContainer( container ) {
+  var isMobile = matchMedia('screen and (max-width: 768px)').matches;
   var carousel = container.querySelector('.main-carousel');
   var flkty = new Flickity(carousel, {
     contain: false,
     pageDots: false,
-    imagesLoaded: true
+    imagesLoaded: true,
+    draggable: isMobile
   });
   var carouselStatus = container.querySelector('.carousel-status');
 
