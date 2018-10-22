@@ -29,6 +29,12 @@ window.ontouchmove = function () {
 };
 window.onresize = function () {
 };
+window.onscroll = function () {
+  scrollPos = window.pageYOffset;
+  // scrollPromptCheck();
+  updateInView();
+  triggerElement && fadeBackground();
+};
 
 // Intro Animation
 
@@ -37,7 +43,9 @@ d = document,
 e = d.documentElement,
 g = d.getElementsByTagName('body')[0],
 x = w.innerWidth||e.clientWidth||g.clientWidth,
-is_root = location.pathname == "/";
+isRootPage = location.pathname == "/";
+
+const scrollPrompt = document.querySelector('.scroll-prompt');
 
 function fadeIn() {
   setTimeout(function(){
@@ -54,6 +62,15 @@ function fadeIn() {
     }
   }, 2000);
 
+  // SCROLL PROMPT
+
+  setTimeout(function(){
+    scrollPromptCheck();
+    window.onscroll = function () {
+      scrollPromptCheck();
+    };
+  }, 8000);
+
   if (scrollPos < 1) {
     document.body.classList.add('lock-scroll');
     setTimeout(function(){
@@ -61,6 +78,18 @@ function fadeIn() {
     }, 1800);
   }
 }
+
+let showedUp = 0;
+function scrollPromptCheck() {
+  if (scrollPos < 60 && showedUp !== 1) {
+    scrollPrompt.classList.remove('hide');
+    showedUp = 1;
+  } else {
+    scrollPrompt.classList.add('hide');
+  }
+}
+
+
 
 // LAZY LOAD
 var lazy = document.getElementsByClassName('js-lazy');
@@ -204,6 +233,7 @@ let vph = window.innerHeight;
 
 const triggerElement = document.querySelector('.js-bg-color-fade');
 const projectContent = document.querySelector('.project-content');
+const projectContentBGColor = projectContent && projectContent.dataset.bgColor;
 
 function crossTrigger() {
   const trigger = triggerElement && triggerElement.getBoundingClientRect();
@@ -211,10 +241,8 @@ function crossTrigger() {
 }
 
 function fadeBackground() {
-  crossTrigger() ? projectContent.classList.add('pink') : projectContent.classList.remove('pink');
+  crossTrigger() ? projectContent.classList.add(projectContentBGColor) : projectContent.classList.remove(projectContentBGColor);
 }
-
-// window.onscroll = fadeBackground;
 
 triggerElement && fadeBackground();
 
@@ -236,13 +264,6 @@ function updateInView() {
     inView(item.parentNode) && item.parentNode.play();
   });
 }
-
-window.onscroll = function () {
-  updateInView();
-  triggerElement && fadeBackground();
-};
-
-// window.onscroll = updateInView;
 
 updateInView();
 

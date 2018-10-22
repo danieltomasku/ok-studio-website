@@ -191,9 +191,9 @@ video {
 .scroll-progress {
   position: fixed;
   bottom: 20px;
-  right: 40px;
-  height: 90px;
-  width: 90px;
+  right: 20px;
+  height: 80px;
+  width: 80px;
   z-index: 10;
   background-color: transparent;
   border: none;
@@ -209,13 +209,25 @@ video {
   background-color: #5ad4cb;
   color: white;
   overflow: auto;
-  transition: background-color .8s ease;
+  transition: background-color .8s ease, color .8s ease;
+}
+#pretend.project-content {
+  background-color: #eef2f5;
+  color: black;
+  overflow: auto;
+  transition: background-color .8s ease, color .8s ease;
+}
+#west.project-content {
+  background-color: #3f5644;
+  color: white;
+  overflow: auto;
+  transition: background-color .8s ease, color .8s ease;
 }
 
 #about.project-content {
   background: transparent; /* fallback color */
   overflow: auto;
-  transition: background-color .8s ease;
+  transition: background-color .8s ease, color .8s ease;
   color: white;
 }
 
@@ -235,11 +247,21 @@ body.about-page {
   background-color: #ffc5a6 !important;
 }
 
+.mint {
+  background-color: #def0e4 !important;
+  color: black !important;
+}
+
+.yellow {
+  background-color: #f1c100 !important;
+  color: white !important;
+}
+
 .intro {
   width: 50%;
   display: inline-block;
   position: relative;
-  padding: 0px 60px 0 0px;
+  padding: 0px 50px 0 0px;
   margin: 0;
 }
 
@@ -438,6 +460,10 @@ body.about-page {
   padding: 0 100px;
   font-family: GTWalsheim-Thin;
   margin: 120px 0;
+}
+
+.large-project-image {
+  width: 100%;
 }
 
 .section-title {
@@ -925,6 +951,20 @@ h2 {
   z-index: -1;
 }
 
+.scroll-prompt {
+  font-family: GTWalsheim, sans-serif;
+  font-size: 18px;
+  color: white;
+  position: absolute;
+  bottom: 10%;
+  transform: translateX(-50%);
+  left: 50%;
+  z-index: 100;
+  text-transform: uppercase;
+  transition: all 1s;
+  /*animation: 1s pulse infinite alternate;*/
+}
+
 .landing-text {
   font-family: GTWalsheim, serif;
   font-size: 5.6vw;
@@ -1215,6 +1255,11 @@ input:focus {
 .social-icons-item {
   width: 40px;
   margin: 0 0 0 24px;
+  transition: all .5s;
+}
+
+.social-icons-item:hover {
+  filter: invert(100%);
 }
 
 #index-overlay {
@@ -1359,8 +1404,8 @@ input:focus {
     .scroll-progress {
       bottom: 20px;
       right: 20px;
-      height: 70px;
-      width: 70px;
+      height: 40px;
+      width: 40px;
       z-index: 10;
       padding: 0;
     }
