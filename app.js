@@ -287,16 +287,22 @@ allCharWrapper.forEach((item) => {
 });
 
 function handleMouseEnter(event) {
+  var rand = Math.floor(Math.random() * event.target.children.length);
   if (event.target.children[0].classList.contains('show')) {
     event.target.children[0].classList.add('hide');
     event.target.children[0].classList.remove('show');
-    event.target.children[1].classList.add('show');
-    event.target.children[1].classList.remove('hide');
+    event.target.children[rand].classList.add('show');
+    event.target.children[rand].classList.remove('hide');
   } else {
     event.target.children[0].classList.add('show');
     event.target.children[0].classList.remove('hide');
-    event.target.children[1].classList.add('hide');
-    event.target.children[1].classList.remove('show');
+    var allChildren = Array.from(event.target.children);
+    var removeEmojiList = allChildren.slice(1);
+
+    removeEmojiList.forEach(item => {
+      item.classList.add('hide');
+      item.classList.remove('show');
+    });
   }
 
   if (allCharEmoji.length === document.querySelectorAll('.char-emoji.show').length) {
