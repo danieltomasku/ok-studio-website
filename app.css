@@ -81,10 +81,19 @@ ul {
   margin: 0;
 }
 
+ol > li {
+  list-style: decimal inside;
+}
+
 video {
   display: block;
   position: relative;
   width: 100%;
+}
+
+a[href^="tel"] {
+  color:inherit;
+  text-decoration:none;
 }
 
 /*.flickity-page-dots .dot {
@@ -184,8 +193,10 @@ video {
   text-decoration: none;
 }
 .next-project-title {
+  font-family: GTWalsheim-Light, sans-serif;
   font-size: 80px;
   margin: 4px 0 0;
+  font-weight: normal;
 }
 
 .scroll-progress {
@@ -254,6 +265,11 @@ body.about-page {
 
 .yellow {
   background-color: #f1c100 !important;
+  color: white !important;
+}
+
+.black {
+  background-color: #000000 !important;
   color: white !important;
 }
 
@@ -428,7 +444,7 @@ body.about-page {
   width: 50%;
   display: inline-block;
   margin-bottom: 15px;
-  padding: 0 3% 0px 0;
+  padding: 0 5% 0px 0;
 }
 
 .about-shape {
@@ -494,6 +510,8 @@ body.about-page {
 .role-title {
   font-family: GTWalsheim-Medium, sans-serif;
   margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: normal;
 }
 
 .role-image-wrapper {
@@ -515,6 +533,7 @@ body.about-page {
 }
 
 .role-item {
+  font-family: GTWalsheim-Thin, sans-serif;
   margin-bottom: 9px;
   line-height: 1.7;
 }
@@ -1033,7 +1052,7 @@ h2 {
   color: #dddfe2;
   font-family: GTWalsheim-Light, sans-serif;
   font-size: 90px;
-  margin: 1% 0 21px;
+  margin: 10px 0;
   text-align: right;
   line-height: 1;
   font-weight: lighter;
@@ -1058,10 +1077,13 @@ h2 {
 }
 
 .menu-container {
-  height: 100vh;
+  height: auto;
   width: 100%;
   overflow: auto;
-  padding: 70px 45px 0;
+  padding: 50px;
+  transform: translateY(-50%);
+  top: 50%;
+  position: absolute;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -1216,6 +1238,7 @@ form {
 
 input {
   background-color: transparent;
+  border-radius: unset;
   border: none;
   border-bottom: 1px solid white;
   padding: 7px 0;
@@ -1298,6 +1321,7 @@ input:focus {
 .index-title {
   color: white;
   font-size: 90px;
+  font-weight: normal;
   font-family: GTWalsheim-Light, sans-serif;
   pointer-events: auto;
   cursor: pointer;
@@ -1474,6 +1498,11 @@ input:focus {
       padding: 0;
     }
 
+    .role-image-wrapper img {
+      max-height: 200px;
+      margin: 0px auto 36px;
+    }
+
     .pillar-wrapper {
       flex-wrap: wrap;
     }
@@ -1596,10 +1625,10 @@ input:focus {
     }
 
     .menu-container {
-      height: 100vh;
+      height: auto;
       width: 100%;
       overflow: auto;
-      padding: 90px 25px;
+      padding: 0 25px;
     }
 
     .page-content {

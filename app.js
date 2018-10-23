@@ -79,6 +79,8 @@ function fadeIn() {
   }
 }
 
+
+// SCROLL PROMPT
 let showedUp = 0;
 function scrollPromptCheck() {
   if (scrollPos < 60 && showedUp !== 1) {
@@ -86,6 +88,7 @@ function scrollPromptCheck() {
     showedUp = 1;
   } else {
     scrollPrompt.classList.add('hide');
+    window.removeEventListener('scroll', scrollPromptCheck);
   }
 }
 
@@ -93,11 +96,11 @@ function scrollPromptCheck() {
 
 // LAZY LOAD
 var lazy = document.getElementsByClassName('js-lazy');
-if(lazy.length){
+if (lazy.length) {
   function lazyLoad() {
     for (var i=0; i < lazy.length; i++) {
       var lazyDataSrc = lazy[i].getAttribute('data-src');
-      if(lazyDataSrc) {
+      if (lazyDataSrc) {
         lazy[i].setAttribute('src', lazyDataSrc);
       }
       if (lazy[i].parentNode.nodeName === 'VIDEO') {
@@ -180,7 +183,9 @@ const slideBackward = document.querySelector('.slide-backward');
 
 if (slideForward) {
   slideForward.addEventListener('click', handleSlideForward);
+  slideForward.addEventListener('touchstart', handleSlideForward);
   slideBackward.addEventListener('click', handleSlideBackward);
+  slideBackward.addEventListener('touchstart', handleSlideBackward);
 
   let index = 0;
   let total = landingProjects.length;
