@@ -168,12 +168,12 @@ function closeNav() {
 
 // ANIMATE TO TOP
 function animateToTop(e) {
-  TweenMax.to(window, 1.7, {scrollTo:0, ease: Power4.easeInOut});
+  TweenMax.to(window, 1.7, {scrollTo:{y:0, autoKill: false}, ease: Power4.easeInOut});
 }
 
 
 // HOME PAGE CLICK-THROUGH SLIDER
-const landingProjects = [...document.querySelectorAll('.landing-project')];
+const landingProjects = Array.from(document.querySelectorAll('.landing-project'));
 
 const activeProject = landingProjects[0];
 const landingProject = document.querySelector('.landing-project');
@@ -181,25 +181,24 @@ const landingProject = document.querySelector('.landing-project');
 const slideForward = document.querySelector('.slide-forward');
 const slideBackward = document.querySelector('.slide-backward');
 
+let slideIndex;
+let slideTotal;
 if (slideForward) {
   slideForward.addEventListener('click', handleSlideForward);
-  slideForward.addEventListener('touchstart', handleSlideForward);
   slideBackward.addEventListener('click', handleSlideBackward);
-  slideBackward.addEventListener('touchstart', handleSlideBackward);
-
-  let index = 0;
-  let total = landingProjects.length;
+  slideIndex = 0;
+  slideTotal = landingProjects.length;
   function handleSlideForward() {
-    landingProjects[index].classList.remove('-active');
-    landingProjects[(index+1) % total].classList.add('-active');
-    index = (index+1) % total;
+    landingProjects[slideIndex].classList.remove('-active');
+    landingProjects[(slideIndex+1) % slideTotal].classList.add('-active');
+    slideIndex = (slideIndex+1) % slideTotal;
   }
 
   function handleSlideBackward() {
-    const itemActive = index === 0 ? total - 1 : Math.abs(index - 1);
-    landingProjects[index].classList.remove('-active');
+    const itemActive = slideIndex === 0 ? slideTotal - 1 : Math.abs(slideIndex - 1);
+    landingProjects[slideIndex].classList.remove('-active');
     landingProjects[itemActive].classList.add('-active');
-    index = index === 0 ? total - 1 : Math.abs(index - 1);
+    slideIndex = slideIndex === 0 ? slideTotal - 1 : Math.abs(slideIndex - 1);
   }
 }
 
