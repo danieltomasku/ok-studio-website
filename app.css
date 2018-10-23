@@ -1273,6 +1273,7 @@ input:focus {
   justify-content: flex-end;
   height: 60px;
   align-items: center;
+  margin-top: 30px;
 }
 
 .social-icons-item {
@@ -1530,7 +1531,7 @@ input:focus {
     }
 
     .menu-item {
-      margin-top: 50px;
+      margin-top: 42px;
       font-size: 48px;
       line-height: 30px;
     }
