@@ -832,7 +832,8 @@ body.about-page {
   height: 100%;
   top: 0;
   left: 0;
-  animation: colorBlend 4.2s infinite;
+  animation: colorBlend 6s infinite;
+  animation-direction: alternate;
   z-index: 200;
   transition: opacity 1.5s;
   cursor: none;
@@ -928,6 +929,7 @@ body.about-page {
   font-family: GTWalsheim, serif;
   font-size: 14px;
   line-height: 20px;
+  color: white;
 }
 
 .about a {

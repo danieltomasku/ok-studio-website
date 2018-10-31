@@ -241,7 +241,7 @@ const projectContentBGColor = projectContent && projectContent.dataset.bgColor;
 
 function crossTrigger() {
   const trigger = triggerElement && triggerElement.getBoundingClientRect();
-  return !(trigger.top > vph - 200);
+  return !(trigger.bottom > vph - 100);
 }
 
 function fadeBackground() {
