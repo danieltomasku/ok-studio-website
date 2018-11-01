@@ -234,6 +234,12 @@ a[href^="tel"] {
   overflow: auto;
   transition: background-color .8s ease, color .8s ease;
 }
+#docent.project-content {
+  background-color: #2F343A;
+  color: white;
+  overflow: auto;
+  transition: background-color .8s ease, color .8s ease;
+}
 
 #about.project-content {
   background: transparent; /* fallback color */
@@ -1172,8 +1178,74 @@ h2 {
   padding-left: 4px;
 }
 
-a:hover .say-hello-arrow {
+.say-hello:hover {
+  cursor: pointer;
+}
+
+.say-hello:hover .say-hello-arrow {
   transform: translateX(4px);
+}
+
+#form-modal-wrapper {
+  width: 100vw;
+  height: 100vh;
+  color: black;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 102;
+  transition: transform 0.6s cubic-bezier(0.81, 0, 0.23, 0.99), opacity 1s;
+  overflow: auto;
+  transition: all .8s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#form-modal-wrapper.move {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.form-wrapper {
+  width: 50vw;
+  height: auto;
+  padding: 48px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background-image: url('images/form-background.png');
+  background-position: center center;
+  background-size: cover;
+}
+
+.form-submit {
+  display: block;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  font-family: GTWalsheim-Light, sans-serif;
+  padding: 12px 72px;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin: 35px auto 0;
+  transition: background-color .5s ease-in-out, color .5s ease-in-out;
+}
+
+.form-submit:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.close-form {
+  display: inline-block;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.close-form:hover {
+  cursor: pointer;
 }
 
 .list-eyebrow {
@@ -1250,6 +1322,27 @@ form {
   margin-top: 40px;
 }
 
+label {
+  color: white;
+  font-family: GTWalsheim, sans-serif;
+  margin: 18px 0 50px 0;
+  display: block;
+}
+
+textarea {
+  display: block;
+  margin: 35px 0 0 0px;
+  width: 100%;
+  height: 140px;
+  background-color: transparent;
+  border: 1px solid white;
+  box-shadow: none;
+  padding: 12px;
+  color: white;
+  font-family: GTWalsheim-Thin, sans-serif;
+  font-size: 17px;
+}
+
 input {
   background-color: transparent;
   border-radius: unset;
@@ -1258,11 +1351,13 @@ input {
   padding: 7px 0;
   width: 100%;
   color: white;
+  font-family: GTWalsheim-Thin, sans-serif;
+  font-size: 17px;
 }
 
 input:focus {
   outline: none;
-  border-bottom: 2px solid white;
+  border-bottom: 1px solid white;
 }
 
 #menu {

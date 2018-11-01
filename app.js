@@ -166,6 +166,33 @@ function closeNav() {
 }
 
 
+// FORM MODAL FUNCTIONALITY
+function toggleForm(e) {
+  var about = document.getElementsByClassName('say-hello')[0];
+  var overlay = document.getElementById('form-modal-wrapper');
+
+  if (overlay.classList.contains('move')) {
+    overlay.classList.remove('move');
+    about.classList.remove('-active');
+  } else {
+    overlay.classList.add('move');
+    about.classList.add('-active')
+  }
+
+  document.body.classList.contains('lock-scroll') && !overlay.classList.contains('move') ? document.body.classList.remove('lock-scroll') : document.body.classList.add('lock-scroll');
+  // sendAnalytics(e);
+}
+
+function closeForm() {
+  document.getElementById('form-modal-wrapper').classList.remove('move');
+  document.body.classList.remove('lock-scroll');
+  var eventList = ['click', 'touchstart'];
+  eventList.forEach(function(event) {
+    // document.removeEventListener(event, handleClickOutsideAbout);
+  });
+}
+
+
 // ANIMATE TO TOP
 function animateToTop(e) {
   TweenMax.to(window, 1.7, {scrollTo:{y:0, autoKill: false}, ease: Power4.easeInOut});
