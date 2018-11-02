@@ -361,9 +361,13 @@ body.about-page {
 
 .shop-hero-text-wrapper {
   position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
+  transform: translate(0, -50%);
+  top: 52%;
+  left: 0;
+  width: 100%;
+  max-width: 650px;
+  text-align: left;
+  padding: 0 50px 0 50px;
 }
 
 .shop-cta a {
@@ -382,6 +386,34 @@ body.about-page {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+.shop-grid-text-wrapper {
+  position: absolute;
+  display: block;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.shop-grid-cta {
+  color: white;
+  font-size: 20px;
+  font-family: GTWalsheim-Thin, sans-serif;
+}
+
+.shop-grid-overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: .7s ease;
+  cursor: pointer;
+}
+
+.shop-grid-item:hover .shop-grid-overlay {
+  opacity: 1;
 }
 
 .left-column {
@@ -412,16 +444,11 @@ body.about-page {
 }
 
 .shop-grid-item h4 {
-  position: absolute;
-  display: block;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
   font-family: GTWalsheim-Bold, sans-serif;
   font-size: 60px;
   font-weight: normal;
   color: white;
-  margin: 0;
+  margin: 16px;
 }
 
 .hero-title.centered {
@@ -899,6 +926,23 @@ body.about-page {
   padding: 0 16% 55px 0;
 }
 
+.shop-title {
+  font-size: 75px;
+  font-family: GTWalsheim-Bold, sans-serif;
+  color: white;
+  position: relative;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.shop-description {
+  color: white;
+  font-family: GTWalsheim-Thin, sans-serif;
+  margin-bottom: 30px;
+  line-height: 1.8;
+  font-size: 20px;
+}
+
 .footer-content-wrapper {
   /*height: 100px;*/
   position: absolute;
@@ -1193,7 +1237,7 @@ h2 {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 102;
+  z-index: 216;
   transition: transform 0.6s cubic-bezier(0.81, 0, 0.23, 0.99), opacity 1s;
   overflow: auto;
   transition: all .8s;
@@ -1228,7 +1272,7 @@ h2 {
   text-transform: uppercase;
   font-size: 12px;
   margin: 35px auto 0;
-  transition: background-color .5s ease-in-out, color .5s ease-in-out;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
 }
 
 .form-submit:hover {
@@ -1341,6 +1385,10 @@ textarea {
   color: white;
   font-family: GTWalsheim-Thin, sans-serif;
   font-size: 17px;
+}
+
+textarea:focus {
+  outline: none;
 }
 
 input {
@@ -1523,8 +1571,21 @@ input:focus {
       height: 500px;
     }
 
+    label {
+      color: white;
+      font-family: GTWalsheim, sans-serif;
+      margin: 18px 0 40px 0;
+      display: block;
+    }
+
+    .form-wrapper {
+      width: 100vw;
+      height: 100%;
+    }
+
     .index-title {
-      font-size: 48px;
+      font-size: 38px;
+      margin: 8px 0;
     }
 
     .index-title:before, .index-title:after {
