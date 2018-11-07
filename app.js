@@ -23,6 +23,8 @@ window.onload = function () {
   scrollPos = window.pageYOffset;
   fadeIn();
   lazy.length && lazyLoad();
+  enableAutoPlay();
+  makeDots();
 };
 window.ontouchmove = function () {
   scrollPos = window.pageYOffset;
@@ -45,7 +47,7 @@ g = d.getElementsByTagName('body')[0],
 x = w.innerWidth||e.clientWidth||g.clientWidth,
 isRootPage = location.pathname == "/";
 
-const scrollPrompt = document.querySelector('.scroll-prompt');
+// const scrollPrompt = document.querySelector('.scroll-prompt');
 
 function fadeIn() {
   setTimeout(function(){
@@ -64,12 +66,12 @@ function fadeIn() {
 
   // SCROLL PROMPT
 
-  setTimeout(function(){
-    scrollPromptCheck();
-    window.onscroll = function () {
-      scrollPromptCheck();
-    };
-  }, 8000);
+  // setTimeout(function(){
+  //   scrollPromptCheck();
+  //   window.onscroll = function () {
+  //     scrollPromptCheck();
+  //   };
+  // }, 8000);
 
   if (scrollPos < 1) {
     document.body.classList.add('lock-scroll');
@@ -81,16 +83,16 @@ function fadeIn() {
 
 
 // SCROLL PROMPT
-let showedUp = 0;
-function scrollPromptCheck() {
-  if (scrollPos < 60 && showedUp !== 1) {
-    scrollPrompt.classList.remove('hide');
-    showedUp = 1;
-  } else {
-    scrollPrompt.classList.add('hide');
-    window.removeEventListener('scroll', scrollPromptCheck);
-  }
-}
+// let showedUp = 0;
+// function scrollPromptCheck() {
+//   if (scrollPos < 60 && showedUp !== 1) {
+//     scrollPrompt.classList.remove('hide');
+//     showedUp = 1;
+//   } else {
+//     scrollPrompt.classList.add('hide');
+//     window.removeEventListener('scroll', scrollPromptCheck);
+//   }
+// }
 
 
 
@@ -200,10 +202,19 @@ function animateToTop(e) {
 
 
 // HOME PAGE CLICK-THROUGH SLIDER
-const landingProjects = Array.from(document.querySelectorAll('.landing-project'));
 
+
+var autoplay;
+function enableAutoPlay() {
+  autoplay = setInterval(handleSlideForward, 7000);
+}
+
+function disableAutoPlay() {
+  clearInterval(autoplay);
+  autoplay = setInterval(handleSlideForward, 15000);
+}
+const landingProjects = Array.from(document.querySelectorAll('.landing-project'));
 const activeProject = landingProjects[0];
-const landingProject = document.querySelector('.landing-project');
 
 const slideForward = document.querySelector('.slide-forward');
 const slideBackward = document.querySelector('.slide-backward');
@@ -211,21 +222,41 @@ const slideBackward = document.querySelector('.slide-backward');
 let slideIndex;
 let slideTotal;
 if (slideForward) {
-  slideForward.addEventListener('click', handleSlideForward);
+  slideForward.addEventListener('click', function() {
+    handleSlideForward();
+    disableAutoPlay();
+  });
   slideBackward.addEventListener('click', handleSlideBackward);
   slideIndex = 0;
   slideTotal = landingProjects.length;
   function handleSlideForward() {
+    const slideDots = document.querySelectorAll('.slide-dot');
     landingProjects[slideIndex].classList.remove('-active');
     landingProjects[(slideIndex+1) % slideTotal].classList.add('-active');
+    slideDots[slideIndex].classList.remove('-active');
+    slideDots[(slideIndex+1) % slideTotal].classList.add('-active');
     slideIndex = (slideIndex+1) % slideTotal;
   }
 
   function handleSlideBackward() {
+    const slideDots = document.querySelectorAll('.slide-dot');
     const itemActive = slideIndex === 0 ? slideTotal - 1 : Math.abs(slideIndex - 1);
     landingProjects[slideIndex].classList.remove('-active');
     landingProjects[itemActive].classList.add('-active');
+    slideDots[slideIndex].classList.remove('-active');
+    slideDots[itemActive].classList.add('-active');
     slideIndex = slideIndex === 0 ? slideTotal - 1 : Math.abs(slideIndex - 1);
+    disableAutoPlay();
+  }
+}
+function makeDots() {
+  const slideDotsWrapper = document.querySelector('.slide-dots');
+
+  for (i = 0; i < landingProjects.length; i++) {
+    const dot = document.createElement('li');
+    dot.classList.add('slide-dot');
+    i === 0 && dot.classList.add('-active');
+    slideDotsWrapper.append(dot);
   }
 }
 

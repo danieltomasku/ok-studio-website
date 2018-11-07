@@ -650,6 +650,30 @@ body.about-page {
   display: block;
 }
 
+.slide-dots {
+  position: absolute;
+  bottom: 6%;
+  right: 50px;
+  display: inline-block;
+  z-index: 10;
+  mix-blend-mode: difference;
+}
+
+.slide-dots li {
+  width: 42px;
+  height: 2px;
+  border-radius: 0px;
+  display: inline-block;
+  margin-right: 11px;
+  background-color: white;
+  opacity: .3;
+}
+
+.slide-dots li.-active {
+  background-color: white;
+  opacity: 1;
+}
+
 .landing-project.goodwell:hover {
   cursor: url('images/cursor-goodwell.png') 32 32, auto;
   cursor: -webkit-image-set(url('images/cursor-goodwell-lo.png') 1x, url('images/cursor-goodwell.png') 2x) 0 0, pointer; /* Webkit */
