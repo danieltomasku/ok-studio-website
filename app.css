@@ -1648,6 +1648,11 @@ input:focus {
       font-size: 14px;
     }
 
+    .shop-title {
+      font-size: 10vw;
+      margin-bottom: 20px;
+    }
+
     .shop-grid-item h4 {
       font-size: 28px;
     }
