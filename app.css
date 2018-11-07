@@ -943,11 +943,11 @@ body.about-page {
 }
 
 .hero-title {
-  font-size: 75px;
+  font-size: 5.2vw;
   font-family: GTWalsheim-Bold, sans-serif;
   color: white;
   position: relative;
-  padding: 0 16% 55px 0;
+  padding: 0 17% 55px 0;
 }
 
 .shop-title {
@@ -1775,6 +1775,10 @@ input:focus {
     #menu {
       /*width: 90vw;
       transform: translateX(90vw);*/
+    }
+
+    .slide-dots {
+      bottom: 10%;
     }
 
     .section-description {
