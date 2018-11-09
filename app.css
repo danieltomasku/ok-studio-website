@@ -661,16 +661,28 @@ body.about-page {
 
 .slide-dots li {
   width: 42px;
-  height: 2px;
+  padding: 10px 0;
+  height: 0px;
   border-radius: 0px;
   display: inline-block;
   margin-right: 11px;
-  background-color: white;
   opacity: .3;
 }
 
-.slide-dots li.-active {
+.slide-dots li:after {
+  content: '';
+  display: block;
   background-color: white;
+  width: 100%;
+  height: 2px;
+  z-index: 1000;
+}
+
+.slide-dots li:hover {
+  cursor: pointer;
+}
+
+.slide-dots li.-active {
   opacity: 1;
 }
 
@@ -1864,8 +1876,8 @@ input:focus {
     }
 
     .carousel-cell {
-      width: 70%;
-      margin: 0 3%;
+      width: 88%;
+      margin: 0 1%;
     }
 
     .loading-project-name {

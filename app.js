@@ -202,8 +202,6 @@ function animateToTop(e) {
 
 
 // HOME PAGE CLICK-THROUGH SLIDER
-
-
 var autoplay;
 function enableAutoPlay() {
   autoplay = setInterval(handleSlideForward, 7000);
@@ -245,7 +243,7 @@ if (slideForward) {
     landingProjects[itemActive].classList.add('-active');
     slideDots[slideIndex].classList.remove('-active');
     slideDots[itemActive].classList.add('-active');
-    slideIndex = slideIndex === 0 ? slideTotal - 1 : Math.abs(slideIndex - 1);
+    slideIndex = itemActive;
     disableAutoPlay();
   }
 }
@@ -258,6 +256,25 @@ function makeDots() {
     i === 0 && dot.classList.add('-active');
     slideDotsWrapper.append(dot);
   }
+  const slideDots = Array.from(document.querySelectorAll('.slide-dot'));
+  slideDots.forEach(item => {
+    item.addEventListener('click', function (event) {
+      handleDotClick(event);
+    });
+  });
+}
+
+function handleDotClick(e) {
+  const slideDots = Array.from(document.querySelectorAll('.slide-dot'));
+  const slideDotsWrapper = document.querySelector('.slide-dots');
+  const dotIndex = Array.prototype.indexOf.call(slideDotsWrapper.children, e.target);
+  const itemActive = slideIndex === 0 ? slideTotal - 1 : Math.abs(slideIndex);
+  landingProjects[slideIndex].classList.remove('-active');
+  landingProjects[dotIndex].classList.add('-active');
+  slideDots[slideIndex].classList.remove('-active');
+  slideDots[dotIndex].classList.add('-active');
+  slideIndex = dotIndex;
+  disableAutoPlay();
 }
 
 
