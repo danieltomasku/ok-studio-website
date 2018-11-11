@@ -918,6 +918,8 @@ body.about-page {
   left: 50%;
   font-size: 90px;
   color: white;
+  width: 80vw;
+  text-align: center;
 }
 
 .loading-screen svg {
