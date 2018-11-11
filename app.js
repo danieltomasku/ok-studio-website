@@ -170,15 +170,12 @@ function closeNav() {
 
 // FORM MODAL FUNCTIONALITY
 function toggleForm(e) {
-  var about = document.getElementsByClassName('say-hello')[0];
   var overlay = document.getElementById('form-modal-wrapper');
 
   if (overlay.classList.contains('move')) {
     overlay.classList.remove('move');
-    about.classList.remove('-active');
   } else {
     overlay.classList.add('move');
-    about.classList.add('-active')
   }
 
   document.body.classList.contains('lock-scroll') && !overlay.classList.contains('move') ? document.body.classList.remove('lock-scroll') : document.body.classList.add('lock-scroll');

@@ -216,7 +216,7 @@
             </ol>
           </div>
           <div class="cta-wrapper">
-            <a href="http://www.google.com" class="cta">Register Here</a>
+            <div class="cta" onclick="toggleForm(this)">Inquire Here</div>
           </div>
         </div>
       </div>
@@ -230,6 +230,24 @@
       <svg width="640" height="640" xmlns="http://www.w3.org/2000/svg"><g style="transform: translateX(-15px);" fill="none" fill-rule="evenodd"><path d="M0 0h640v640H0z"/><path fill="#ffffff" fill-rule="nonzero" d="M229 280.13l16.039 16.062 63.586-63.563V451h22.75V232.629l63.473 63.677L411 280.13 320 189z"/></g></svg>
     </svg>
   </button>
+
+  <!-- Form Modal -->
+  <div id="form-modal-wrapper">
+    <div class="form-wrapper">
+      <div class="close-form" onclick="closeForm(this)">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+      </div>
+      <form method="POST" action="https://formspree.io/danieltomasku@gmail.com">
+        <input id="name" type="name" name="name">
+        <label for="name">Name</label>
+        <input id="email" type="email" name="email">
+        <label for="email">Email</label>
+        <textarea id="message" name="message"></textarea>
+        <label for="message">Message</label>
+        <button class="form-submit" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
