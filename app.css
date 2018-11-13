@@ -726,6 +726,10 @@ body.about-page {
   cursor: url('images/cursor-pretend.png') 32 32, auto;
   cursor: -webkit-image-set(url('images/cursor-pretend-lo.png') 1x, url('images/cursor-pretend.png') 2x) 0 0, pointer; /* Webkit */
 }
+.landing-project.docent:hover {
+  cursor: url('images/cursor-docent.png') 32 32, auto;
+  cursor: -webkit-image-set(url('images/cursor-docent-lo.png') 1x, url('images/cursor-docent.png') 2x) 0 0, pointer; /* Webkit */
+}
 
 .landing-project {
   position: absolute;
@@ -1187,7 +1191,7 @@ h2 {
   color: #dddfe2;
   font-family: GTWalsheim-Light, sans-serif;
   font-size: 70px;
-  margin: 2% 0;
+  margin: 3.3vh 0;
   text-align: right;
   line-height: 1;
   font-weight: lighter;
@@ -1206,7 +1210,6 @@ h2 {
 }
 
 .menu-item:hover {
-  /*font-family: GTWalsheim, sans-serif;*/
   color: black;
   font-weight: normal;
 }
@@ -1217,7 +1220,7 @@ h2 {
   overflow: auto;
   padding: 50px;
   transform: translateY(-50%);
-  top: 50%;
+  top: 48%;
   position: absolute;
   -webkit-overflow-scrolling: touch;
 }
@@ -1496,12 +1499,15 @@ input:focus {
 }
 
 .social-icons-wrapper {
-  width: 100%;
+  width: auto;
   display: flex;
   justify-content: flex-end;
-  height: 60px;
+  height: 40px;
   align-items: center;
   margin-top: 30px;
+  position: absolute;
+  bottom: 3%;
+  right: 50px;
 }
 
 .social-icons-item {
@@ -1745,6 +1751,7 @@ input:focus {
 
     .social-icons-wrapper {
       margin-top: 50px;
+      right: 25px;
     }
 
     .about-shape {
