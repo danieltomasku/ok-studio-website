@@ -1712,7 +1712,7 @@ input:focus {
 
     .left-column {
       width: 100%;
-      display: inline-block;
+      display: block;
     }
 
     .right-column {
