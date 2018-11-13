@@ -96,7 +96,7 @@ video {
 }
 
 a[href^="tel"] {
-  color:inherit;
+  color:inherit !important;
   text-decoration:none;
 }
 
