@@ -36,6 +36,7 @@ window.onscroll = function () {
   // scrollPromptCheck();
   updateInView();
   triggerElement && fadeBackground();
+  headerScrollMorph();
 };
 
 // Intro Animation
@@ -112,6 +113,18 @@ if (lazy.length) {
     }
   }
   // window.onload = lazyLoad;
+}
+
+
+// HEADER SCROLL MORPH
+function headerScrollMorph() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("header").classList.add('-active');
+    document.querySelector('.header-bar').classList.add('-active');
+  } else {
+    document.getElementById("header").classList.remove('-active');
+    document.querySelector('.header-bar').classList.remove('-active');
+  }
 }
 
 // INDEX MENU FUNCTIONALITY
