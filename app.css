@@ -1050,6 +1050,11 @@ body.about-page {
   cursor: pointer;
 }
 
+.footer-column.links a {
+  color: white;
+  text-decoration: none;
+}
+
 .about {
   font-family: GTWalsheim, serif;
   font-size: 14px;
