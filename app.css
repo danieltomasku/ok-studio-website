@@ -575,6 +575,13 @@ body.about-page {
   font-weight: normal;
 }
 
+.role-subhead {
+  font-family: GTWalsheim-Thin, sans-serif;
+  margin-bottom: 24px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
 .role-image-wrapper {
   display:inline-block;
   width: 100%;
@@ -1489,7 +1496,7 @@ input:focus {
 
 #menu {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: white;
   color: black;
   position: fixed;
