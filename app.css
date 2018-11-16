@@ -119,6 +119,10 @@ a[href^="tel"] {
   margin: 35px 0;
 }
 
+.carousel-status.-light-theme {
+  color: black;
+}
+
 .flickity-prev-next-button {
   top: 50%;
   width: 50%;
