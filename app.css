@@ -1869,7 +1869,8 @@ input:focus {
     }
 
     .slide-dots {
-      bottom: 10%;
+      bottom: 12%;
+      right: 25px;
     }
 
     .section-description {
