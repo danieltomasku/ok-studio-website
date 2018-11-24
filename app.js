@@ -24,6 +24,7 @@ window.onload = function () {
   fadeIn();
   lazy.length && lazyLoad();
   enableAutoPlay();
+  // allCharWrapper.length > 0 && setInterval(autoPlayChars, 7000);
   makeDots();
 };
 window.ontouchmove = function () {
@@ -358,7 +359,7 @@ allCharWrapper.forEach((item) => {
 });
 
 function handleMouseEnter(event) {
-  var rand = Math.floor(Math.random() * event.target.children.length);
+  var rand = Math.floor(Math.random() * (event.target.children.length - 1)) + 1;
   if (event.target.children[0].classList.contains('show')) {
     event.target.children[0].classList.add('hide');
     event.target.children[0].classList.remove('show');
@@ -386,6 +387,29 @@ function handleMouseEnter(event) {
     })
   }
 };
+
+function autoPlayChars() {
+  var rand = Math.floor(Math.random() * allCharWrapper.length);
+  var randEmoji = Math.floor(Math.random() * (allCharWrapper[rand].children.length - 1)) + 1;
+
+  if (allCharWrapper[rand].children[0].classList.contains('show')) {
+    allCharWrapper[rand].children[0].classList.add('hide');
+    allCharWrapper[rand].children[0].classList.remove('show');
+    allCharWrapper[rand].children[randEmoji].classList.add('show');
+    allCharWrapper[rand].children[randEmoji].classList.remove('hide');
+  } else {
+    allCharWrapper[rand].children[0].classList.add('show');
+    allCharWrapper[rand].children[0].classList.remove('hide');
+    var allChildren = Array.from(allCharWrapper[rand].children);
+    var removeEmojiList = allChildren.slice(1);
+
+    removeEmojiList.forEach(item => {
+      item.classList.add('hide');
+      item.classList.remove('show');
+    });
+  }
+
+}
 
 function resetChars() {
   allCharOriginal.forEach(item => {
